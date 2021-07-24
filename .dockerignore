@@ -1,5 +1,6 @@
 /.git/
 /.pre-commit-config.yaml
+/.github/
 /Dockerfile
 /docker-compose.yml
 
