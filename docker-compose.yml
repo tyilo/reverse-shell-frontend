@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    image: tyilo/reverse-shell-frontend
+    restart: always
+    networks:
+      - traefik
+      - default
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.rs-tyilo-com.rule=Host(`rs.tyilo.com`)
+      - traefik.http.services.rs-tyilo-com.loadbalancer.server.port=80
+
+networks:
+  traefik:
+    external: true
