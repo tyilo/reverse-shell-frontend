@@ -1,6 +1,6 @@
 FROM node:16 AS builder
 
-RUN npm install --global pnpm
+RUN npm install --global pnpm@8
 
 WORKDIR /app
 
